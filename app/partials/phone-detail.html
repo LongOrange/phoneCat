@@ -1,0 +1,39 @@
+<div calss="phone-images">
+    <img ng-repeat="img in phone.images"
+        ng-src="{{img}}"
+        class="phone"
+        ng-class="{active:mainImageUrl==img}"
+        title="{{img}}-{{mainImageUrl}}"/>
+</div>
+<h1>{{phone.name}}</h1>
+<p>{{phone.description}}</p>
+<p>量子制造{{'\u2122'}}</p>
+<ul class="phone-thumbs">
+    <li ng-repeat="img in phone.images">
+        <img ng-src="{{img}}" ng-mouseenter="setImage(img)"/>
+    </li>
+</ul>
+<ul class="specs">
+    <li>
+        <span>connectivity</span>
+        <dl>
+            <dt>connectivity</dt>
+            <dd ng-repeat="connectivity in phone.connectivity">{{connectivity}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Connectivity</span>
+        <dl>
+            <dt>Network Support</dt>
+            <dd>{{phone.connectivity.cell}}</dd>
+            <dt>WiFi</dt>
+            <dd>{{phone.connectivity.wifi}}</dd>
+            <dt>Bluetooth</dt>
+            <dd>{{phone.connectivity.bluetooth}}</dd>
+            <dt>Infrared</dt>
+            <dd>{{phone.connectivity.infrared | checkmark}}</dd>
+            <dt>GPS</dt>
+            <dd>{{phone.connectivity.gps | checkmark}}</dd>
+        </dl>
+    </li>
+</ul>

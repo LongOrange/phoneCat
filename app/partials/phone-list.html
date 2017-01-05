@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            按关键字查询：<input type="text" ng-model="keyWord"/>
+            按关键字排序：
+            <select ng-model="orderProp">
+                <option value="alpha">字母顺序</option>
+                <option value="age">日期顺序</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+            <ul class="phones">
+                <li ng-repeat="phone in phones|filter:keyWord | orderBy: orderProp"
+                  class="thumbnail phone-listing">
+                    <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"/></a>
+                    <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+                    <p>{{phone.snippet}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

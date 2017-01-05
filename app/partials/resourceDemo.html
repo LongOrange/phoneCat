@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myDemoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>resource demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../js/resourceDemo.js"></script>
+
+</head>
+<body>
+   <div ng-controller="demoCtrl">
+       <ul>
+           <li ng-repeat="phone in phones|limitTo:4">
+               {{phone.id}}
+           </li>
+       </ul>
+   </div>
+   <hr>
+   <div ng-controller="demoCtrl2">
+       <ul>
+           <li ng-repeat="phone in phones|limitTo: 3">
+               {{phone.id}}
+           </li>
+       </ul>
+   </div>
+   <hr>
+   <div ng-controller="demoCtrl3">
+       <ul>
+           <li >
+               {{phones.id}}
+           </li>
+       </ul>
+   </div>
+   <hr>
+   <div ng-controller="demoCtrl4">
+       <ul>
+           <li >
+               {{phones.id}}
+           </li>
+       </ul>
+   </div>
+   <hr>
+   <div ng-controller="demoCtrl5">
+       <ul>
+           <li >
+               {{phones.id}}
+           </li>
+       </ul>
+   </div>
+</body>
+</html>
